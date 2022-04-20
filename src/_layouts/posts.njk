@@ -1,0 +1,26 @@
+---
+layout: base.njk
+tmplClass: posts
+---
+
+<div class="content">
+  <div class="bg"></div>
+  <main>
+
+    {% include "breadcrumb.njk" %}
+    <h1>{{ title | heading | safe }}</h1>
+
+    {{ content | safe }}
+
+    <section class="grid">
+      {% for post in pagination.items | sort(attribute = 'time') %}
+        <div class="grid-item">
+            {% include 'post-card.njk' %}
+        </div>
+      {% endfor %}
+    </section>
+
+    {% include "pagination.njk" %}
+    
+  </main>
+</div>

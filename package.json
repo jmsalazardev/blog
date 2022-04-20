@@ -1,0 +1,57 @@
+{
+  "name": "jmsalazardev",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "clean": "npx rimraf public/",
+    "build": "npx @11ty/eleventy",
+    "bench": "DEBUG=Eleventy:Benchmark* npx @11ty/eleventy",
+    "watch": "npx @11ty/eleventy --watch",
+    "serve": "npx @11ty/eleventy --serve",
+    "start": "npx @11ty/eleventy --serve",
+    "debug": "DEBUG=* npx @11ty/eleventy",
+    "deploy": "firebase deploy"
+  },
+  "author": {
+    "name": "José Miguel Salazar",
+    "email": "admin@jmsalazar.dev",
+    "url": "https://twitter.com/JMSalazarDev"
+  },
+  "license": "ISC",
+  "devDependencies": {
+    "@11ty/eleventy": "^1.0.1",
+    "@11ty/eleventy-navigation": "^0.3.2",
+    "@navillus/eleventy-plugin-manifest": "^1.0.4",
+    "@types/markdown-it": "^12.2.3",
+    "11ty-plugin-pwa": "^2.0.0",
+    "clean-css": "^5.3.0",
+    "dedent": "^0.7.0",
+    "eleventy-plugin-i18n": "^0.1.3",
+    "eleventy-plugin-nesting-toc": "^1.3.0",
+    "eleventy-plugin-seo": "^0.5.2",
+    "eleventy-plugin-svg-contents": "^0.7.0",
+    "firebase": "^9.6.11",
+    "fs-extra": "^10.1.0",
+    "https-server": "^0.1.2",
+    "humanize-string": "^3.0.0",
+    "luxon": "^2.3.2",
+    "markdown-it": "^12.3.2",
+    "markdown-it-anchor": "^8.6.2",
+    "moment": "^2.29.3",
+    "node-minify": "^3.6.0",
+    "query-string": "^7.1.1",
+    "rimraf": "^3.0.2",
+    "sass": "^1.50.1",
+    "string": "^3.3.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jmsalazardev/blog.git"
+  },
+  "keywords": ["eleventy", "11ty"],
+  "bugs": {
+    "url": "https://github.com/jmsalazardev/blog/issues"
+  },
+  "homepage": "https://github.com/jmsalazardev/blog#readme",
+  "description": "Blog de un ingeniero de software"
+}

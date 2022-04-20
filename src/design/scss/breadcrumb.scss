@@ -1,0 +1,41 @@
+.breadcrumb {
+  width: 100%;
+  overflow:hidden;
+  font-size: medium;
+  margin: 0;
+  padding: 0;
+  
+  .inside-scroll {
+    overflow-x: auto;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom:15px;
+  }
+  ul {
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    padding: 0;
+    margin: 0;
+    li {
+      flex-basis: auto;
+      padding-right: 0.5em;
+      display: table-cell;
+      &:after {
+        color: white;
+        content: "/\00a0";
+        padding-left: 0.5em;
+      }
+
+      a {
+        color: #cccccc;
+        text-decoration: none;
+        text-transform: uppercase;
+        &:hover {
+          color: #999999;
+        }
+      }
+    }
+  }
+}

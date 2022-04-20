@@ -1,0 +1,9 @@
+{% if eleventyNavigation %}
+    <nav class="breadcrumb">
+        <div class="inside-scroll">
+            {% if eleventyNavigation.key %}
+                {{ collections.all | eleventyNavigationBreadcrumb(eleventyNavigation.key) | eleventyNavigationToHtml | safe }}
+            {% endif %}
+        </div>
+    </nav>
+{% endif %}

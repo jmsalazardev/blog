@@ -1,0 +1,17 @@
+<a class="grid-item" href="{{ card.link }}">
+    <div class="card-thumbnail">
+        <img src="{{ card.thumbnail }}&amp;class=thumbnail&amp;crop=center" alt="{{ card.title }}"/>
+    </div>
+    <div class="card-header">
+        <div class="card-icon">
+            {{ card.icon | svgContents | safe }}
+        </div>
+        <div class="card-title">
+            {{ card.title }}
+        </div>
+    </div>
+    <div class="card-content">
+        {{ card.content }}
+    </div>
+    <div class="card-footer"></div>
+</a>

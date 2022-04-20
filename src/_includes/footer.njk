@@ -1,0 +1,49 @@
+<footer>
+    <div class="footer-container">
+        <nav>
+            {%- for entry in collections.all | eleventyNavigation(locale.lang + "-home")  %}
+                <a href="{{ entry.url | url }}">
+                    <span>{{ entry.title}}</span>
+                </a>
+            {%- endfor %}
+            <a href="/contacto/" title="Contactanos" rel="noopener">Contácto</a>
+            <a href="/condiciones/" title="Condiciones" rel="noopener">Condiciones</a>
+            <a href="/politica-privacidad/" title="Nuestra política de privacidad" rel="noopener">Politica de Privacidad</a>
+        </nav>
+
+        <div class="social-media">
+            {% if metadata.links.youtube %}
+            <a href="{{ metadata.links.youtube }}" title="Suscríbete al canal de Youtube" target="_blank" rel="noopener">
+                <i class="youtube">{{ '/assets/svg/youtube.svg' | svgContents | safe }}</i>
+            </a>
+            {% endif %}
+
+            {% if metadata.links.instagram %}
+            <a href="{{ metadata.links.instagram }}" title="Sígueme en Instagram" target="_blank" rel="noopener">
+                <i class="instagram">{{ '/assets/svg/instagram.svg' | svgContents | safe }}</i>
+            </a>
+            {% endif %}
+
+            {% if metadata.links.twitter %}
+            <a href="{{ metadata.links.twitter }}" title="Sígueme en Twitter" target="_blank" rel="noopener">
+                <i class="twitter">{{ '/assets/svg/twitter.svg' | svgContents | safe }}</i>
+            </a>
+            {% endif %}
+
+            {% if metadata.links.facebook %}
+            <a href="{{ metadata.links.facebook}}" title="Únete a la página de Facebook" target="_blank" rel="noopener">
+                <i class="facebook">{{ '/assets/svg/facebook.svg' | svgContents | safe }}</i>
+            </a>
+             {% endif %}
+        </div>
+
+        <hr class="divider" />
+
+        <p class="description">
+            <a href="/">{{ metadata.title }}</a>– {{ metadata.description }}
+        </p>
+
+        Copyright © {{ helpers.currentYear() }}
+    </div>
+
+</footer>

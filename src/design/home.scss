@@ -1,0 +1,140 @@
+@import "./scss/base";
+@import "./scss/header";
+@import "./scss/content";
+@import "./scss/btn";
+@import "./scss/footer";
+
+.grid {
+  display: grid;
+
+  svg {
+    width: 1.5em;
+    height: 1.5em;
+  }
+}
+
+.grid-item {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: var(--white);
+  border: 3px dashed var(--nav-bg);
+  
+}
+
+.grid.categories {
+  .card-header {
+    display: flex;
+    flex-direction: row;
+    padding: 0.5em 1em;
+  }
+  .card-icon {
+    padding-right: 0.5em;
+  }
+  
+  .card-content {
+    padding: 0.5em 1em;
+  }
+  .card-footer {
+    min-height: 1em;
+  }
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+}
+
+.list-item {
+  flex: 1;
+}
+
+.list.social {
+  .card {
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    color: var(--white);
+    border: 3px dashed var(--nav-bg);
+    padding: 1em;
+    margin-bottom: 1em;
+  }
+  
+  .card-header {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .card-icon {
+    margin-right: 0.5em;
+    svg {
+      width: 1.5em;
+      height: 1.5em;
+    }
+  }
+  
+  .card-title {
+    flex: 0 1 90%;
+  }
+}
+
+
+.game-card {
+  .game-cover img {
+    border-radius: 5px;
+  }
+  .game-info {
+    font-size: smaller;
+  }
+}
+
+.box {
+  background: var(--nav-bg);
+  color: var(--h-color);
+  display: flex;
+  flex-direction: row;
+  min-height: 100px;
+
+  cursor: pointer;
+
+  text-decoration: none;
+
+  transition: transform 0.3s ease;
+
+  i {
+    padding-left: 1em;
+  }
+  &:hover {
+    transform: scale(1.02);
+    background: var(--tag-bg);
+  }
+
+  /*
+  .box-content .row div:last-of-type {
+    text-align: right;
+  }
+  */
+
+  .box-content {
+    display: flex;
+    flex-direction: column;
+    padding: 1em;
+    align-items: flex-start;
+  }
+
+  i {
+    display: flex;
+    color: var(--text-color);
+    align-items: center;
+    justify-content: center;
+    width: 10%;
+    min-width: 3em;
+    max-width: 5em;
+    img {
+      border-radius: 1em;
+      width: 2em;
+      height: 2em;
+    }
+  }
+}

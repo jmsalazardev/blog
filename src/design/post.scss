@@ -1,0 +1,120 @@
+@import "./scss/base";
+@import "./scss/header";
+@import "./scss/content";
+@import "./scss/breadcrumb";
+@import "./scss/toc";
+@import "./scss/footer";
+
+h1 {
+  color: hsla(0, 0%, 100%, 0.9);
+  font-size: 2.2rem;
+  padding: 0;
+  margin: 0;
+}
+
+p.excerpt {
+  color: #90a2aa;
+}
+
+ul.info {
+  display: flex;
+  list-style-type: none;
+  padding: 0;
+  font-size: small;
+  li {
+    flex: 1;
+    &:last-of-type {
+      text-align: end;
+    }
+    a {
+      text-decoration: none;
+    }
+  }
+}
+
+.tags {
+  a {
+    text-decoration: none;
+  }
+  .tag {
+    display: inline-block;
+    border-radius: 0.2em;
+    padding: 0.3em 0.5em 0.3em;
+    background: var(--tag-bg);
+    color: var(--text-color);
+    font-weight: 600;
+    margin: 0.25em 0.1em
+  }
+}
+
+.divider {
+  margin: 1.5em 0 0;
+  padding-top: 1.5em;
+  border-top: 1px solid #272a30;
+}
+h2 {
+  border-bottom: var(--h-border);
+  padding-bottom: 0.5em;
+  padding-top: 2em;
+  font-size: larger;
+}
+p {
+  font-size: large;
+  line-height: 1.5em;
+}
+
+p a,
+ol a {
+  color: #fff;
+
+  text-decoration: none;
+  &:hover {
+    color: #3eb0bf;
+    text-decoration: none;
+  }
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+img.heading {
+  opacity: 0.9;
+  border-radius: var(--rounded-border);
+}
+
+img.landscape {
+  display: flex;
+  margin: 1em auto;
+  width: 100%;
+  height: auto;
+}
+
+img.portrait {
+  display: flex;
+  margin: 1em auto;
+  width: 75%;
+  height: auto;
+}
+
+.toc-container {
+  background: linear-gradient(#1a1c20, #0a0b0c);
+  border-radius: var(--rounded-border);
+  padding: var(--gap);
+  margin-bottom: var(--gap);
+  font-size: smaller;
+
+  a {
+    opacity: 0.8;
+  }
+  h2 {
+    font-weight: 500;
+    opacity: 0.8;
+  }
+}
+
+
+#disqus_thread {
+  min-height: 320px;
+}

@@ -1,0 +1,12 @@
+[
+    {
+      "relation": ["delegate_permission/common.handle_all_urls"],
+      "target": {
+        "namespace": "android_app",
+        "package_name": "net.portalparanormal.app",
+        "sha256_cert_fingerprints": [
+          "C4:A1:D2:5F:87:08:CC:C2:DB:04:AB:5F:FC:9B:F7:EB:96:E8:B7:29:1A:E1:B3:9B:E2:66:80:4D:71:E4:D1:53"
+        ]
+      }
+    }
+  ]

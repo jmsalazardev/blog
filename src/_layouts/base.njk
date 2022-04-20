@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="{{ locale.lang }}" dir="{{ locale.dir }}">
+    <head>
+        <meta charset='utf-8'>
+        <meta http-equiv='x-ua-compatible' content='ie=edge'>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="theme-color" content="{{ site.manifest.theme_color  }}">
+
+        {% for link in alternate %}
+        {% if link.type == 'lang' %}
+        <link rel="alternate" hreflang="{{ link.hreflang }}" href="{{ site.url }}{{ link.href }}" />
+        {% endif %}
+        {% endfor %}
+
+        {{ site.manifest | manifest | safe }}
+        
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png"/>
+        {% for size in [57, 72, 76, 114,120,144,152,180]%}
+        <link rel="apple-touch-icon" sizes="{{ size }}x{{ size }}" href="/apple-touch-icon-{{ size }}x{{ size }}.png"/>
+        {% endfor %}
+        
+
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+        <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+        <meta name="msapplication-TileColor" content="#f7df1e">
+        <meta name="theme-color" content="#ffffff">
+
+
+        <style>
+            {{tmplClass | inlineCSS | cssmin | safe}}
+        </style>
+
+        {% seo "" %}
+        {% if site.facebook.appId %}
+        <meta property="fb:app_id" content="{{ site.facebook.appId }}" />
+        {% endif %}
+
+         {% include "ga.njk" %}
+         {% include "ads.njk" %}
+    </head>
+    <body>
+        <div class="container dark-theme {{ tmplClass }}">
+            {% include "header.njk" %}
+            {{ content | safe}}
+            {% include "footer.njk" %}
+        </div>
+        <script>
+            const disqus_config = function () {
+                this.page.url = "{{ site.url }}{{ page.url }}";
+                this.page.identifier = "{{ page.url | slug }}";
+            };
+            {{tmplClass | inlineJS | safe}}
+        </script>
+    </body>
+</html>

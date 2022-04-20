@@ -1,0 +1,25 @@
+---
+layout: tags.njk
+permalink: /tags/
+eleventyNavigation:
+  parent: root
+  key: tags
+  title: tags
+  order: 2
+  icon: /assets/svg/tags.svg
+
+    
+---
+<h1>Tags</h1>
+
+{% for tag in collections.tags %}
+  {% set tagUrl %}/tags/{{ tag }}/{% endset %}
+  <a href="{{ tagUrl | url }}">
+      <span class="tag tag-sm tag-{{ tag }}">
+        #{{ tag }}
+      </span>
+  </a>
+{% endfor %}
+
+
+ 

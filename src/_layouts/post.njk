@@ -1,0 +1,50 @@
+---
+layout:  base.njk
+tmplClass: post
+---
+<div class="content">
+    <div class="bg"></div>
+    <main>
+        <article>
+
+            {% include "breadcrumb.njk" %}
+
+            <h1>{{ title | heading | safe }}</h1>
+            <p class="excerpt">{{ excerpt | safe }}</p>
+
+            <img src="{{ image }}" alt="{{ title }}"/>
+
+            <ul class="info">
+                <li class="author">@{{author}}</li>
+                <li class="date">{{ date | readableDate }}</li>
+            </ul>
+
+            <div class="divider"></div>
+
+            {% if toc %}
+            <div class="toc-container">
+                <h2>Tabla de contenidos</h2>
+                {{ content | toc | safe }}
+            </div>
+            {% endif %}
+
+            <div class="content-article">
+                {{ content | safe}}
+            </div>
+
+            <div class="tags">
+                {% for tag in tags %}
+                <a href="/tags/{{ tag | slug | url }}/"> 
+                    <span class="tag"> #{{ tag | slug }}</span>
+                </a>
+                {% endfor %}
+            </div>
+        </article>
+
+        <h2> Comentarios </h2>
+        <div id="disqus_thread"></div>
+    </main>
+
+    
+    
+</div>

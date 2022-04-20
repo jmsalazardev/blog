@@ -1,0 +1,83 @@
+.tags {
+  text-align: start;
+  padding: 0.5em;
+  a {
+    text-decoration: none;
+  }
+}
+
+a[href].tags,
+a[href].tags:visited {
+  color: #fff;
+}
+
+
+.tag {
+    display: inline-block;
+    border-radius: 3px;
+    padding: 0.2em 0.5em 0.3em;
+    border-radius: 2px;
+    background: var(--tag-bg);
+    color: var(--text-color);
+    font-weight: 600;
+    margin: 0.25em 0.1em;
+  }
+  
+  .tag-sm {
+    font-size: 0.7em;
+    display: inline-block;
+    letter-spacing: 0.15ch;
+    font-weight: 400;
+  }
+  
+  .tag-leyenda {
+    color: #e0234e;
+    background: #000;
+  }
+
+  .tag-bestiario {
+    background: #90c53f;
+    color: #46483d;
+  }
+
+  .tag-historia {
+    color: #00d8ff;
+    background: #222;
+  }
+
+ 
+  .tag-lugar {
+    background: #09c372;
+    color: #fff;
+  }
+
+  .tag-argentina {
+    background-color: #75aadb;
+    color: #ffffff;
+  }
+  .tag-australia {
+    background-color: #00008b;
+    color: #ffffff;
+  }
+  
+  .tag-chile {
+    background-color: #da291c;
+    color: #ffffff;
+  }
+  .tag-escocia {
+    background-color: #005eb8;
+    color: #ffffff;
+  }
+  .tag-espana {
+    background-color: #ef3340;
+    color: #ffd100;
+
+  }
+  .tag-estados-unidos {
+    background-color: #ffffff;
+    color: #3c3b6e;
+  }
+  .tag-paises-bajos {
+    background-color: #F90000;
+    color: #ffffff;
+  }

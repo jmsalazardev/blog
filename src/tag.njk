@@ -1,0 +1,21 @@
+---
+layout: tags.njk
+pagination:
+    data: collections
+    size: 1
+    alias: tag
+    filter:
+        - all
+        - nav
+        - post
+        - posts
+        - tagList
+permalink: /tags/{{ tag | slug }}/
+eleventyComputed:
+  title: Tagged “{{ tag }}”
+eleventyNavigation:
+  parent: tags
+  key: tagged
+  title: tagged
+  order: 3
+---

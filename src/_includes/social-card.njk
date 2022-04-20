@@ -1,0 +1,13 @@
+<a class="card" href="{{ card.link }}">
+    <div class="card-header">
+        <div class="card-icon">
+            {{ card.icon | svgContents | safe }}
+        </div>
+        <div class="card-title">
+            {{ card.title }}
+        </div>
+    </div>
+    <div class="card-content">
+        {{ card.content }}
+    </div>
+</a>

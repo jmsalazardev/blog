@@ -1,0 +1,36 @@
+---
+layout: base.njk
+tmplClass: home
+---
+<div class="content home">
+  <div class="bg"></div>
+  <main>
+    
+      {% include "breadcrumb.njk" %}
+      <h1>{{ title | heading | safe }}</h1>
+
+      {{ content | safe}}
+
+      <a href="/{{ locale.lang }}/blog/" class="btn btn-yellow">{{ 'contents' | i18n }}</a>
+
+      {% if categoriesCards  %}
+      <h2>Contenidos</h2>
+      <div class="categories grid">
+        {% for card in categoriesCards %}
+          {% include 'category-card.njk' %}
+        {% endfor %}
+      </div>
+      {% endif %}
+
+      {% if socialCards  %}
+      <h2>Redes Sociales</h2>
+      <div class="social list">
+        {% for card in socialCards %}
+        <div class="list-item">
+          {% include 'social-card.njk' %}
+        </div>
+        {% endfor %}
+      </div>
+      {% endif %}
+  </main>
+</div>

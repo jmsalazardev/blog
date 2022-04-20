@@ -1,0 +1,61 @@
+---
+layout: base.njk
+tmplClass: tags
+---
+
+<div class="content">
+  <div class="bg"></div>
+  <main>
+
+    {% include "breadcrumb.njk" %}
+    <h1>{{ title | heading | safe }}</h1>
+
+    {{ content | safe }}
+
+    <section class="cards">
+      {% set taglist = collections[ tag ] %}
+      {% for post in taglist | sort(attribute = 'time') %}
+        <article class="card">
+          <a href="{{ post.url | url }}" title="{{ post.data.title }}">
+
+           <div class="box-cover">
+              <img src="{{ post.data.image }}&amp;class=thumbnail&amp;crop=center" alt="{{ post.data.title }}"/>
+              {% if post.data.award %}
+                <span class="award">
+                  {{ '/assets/svg/award.svg' | svgContents | safe }}
+                </span>
+              {% endif %}
+            </div>
+
+
+            <!--<img src="{{ post.data.image }}" alt="{{ post.data.title }}"/>-->
+    
+            <h2>{{ post.data.title | heading | safe }}</h2>
+            {% if post.data.data.excerpt %}
+              <p>{{ post.data.data.excerpt |  safe }}</p>
+            {% endif %}
+
+            <div class="card-footer">
+            {% if post.data.tags %}
+              <div class="tags">
+                {% for tag in post.data.tags  %}
+                  <a href="/tags/{{ tag }}/">
+                    <span class="tag tag-sm tag-{{ tag }}">
+                      #{{ tag }}
+                    </span>
+                  </a>
+                {% endfor %}
+              </div>
+            {% endif %}
+            </div>
+
+            
+          </a>
+        </article>
+      {% endfor %}
+    </section>
+
+    {% include "pagination.njk" %}
+    
+  </main>
+</div>

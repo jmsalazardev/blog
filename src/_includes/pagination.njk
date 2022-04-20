@@ -1,0 +1,21 @@
+{% if pagination.pageLinks.length > 1 %}
+    <nav class="pagination">
+        <ol>
+            <li class="previous">
+            {% if pagination.previousPageLink %}
+                <a href="{{ pagination.previousPageHref | url }}">
+                    <i class="icon-btn">{{ '/assets/svg/chevron-left.svg' | svgContents | safe }}</i>
+
+                </a>
+            {% endif %}
+            </li>
+            <li class="next">
+            {% if pagination.nextPageLink %}
+                <a href="{{ pagination.nextPageHref | url }}">
+                    <i>{{ '/assets/svg/chevron-right.svg' | svgContents | safe }}</i>
+                </a>
+            {% endif %}
+            </li>
+        </ol>
+    </nav>
+{% endif %}

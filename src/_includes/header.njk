@@ -1,0 +1,28 @@
+<header class="site-header">
+    <div class="logo">
+        <a href="/">
+            <i>{{ "/assets/svg/jmsalazardev.svg" | svgContents | safe }}</i>
+            {{ site.name }}
+        </a>
+    </div>
+
+    <div class="header-middle-area">
+        <nav class="main-nav" id="main-nav">
+            {% set navPages = collections.all | eleventyNavigation(locale.lang + "-home") %}
+            
+            <ul>
+                {%- for entry in navPages %}
+
+                    <li{% if entry.key == page.collection %} class="active"{% endif %}>                    
+                        <a href="{{ entry.url | url }}">
+                            {% if entry.icon %}
+                                {{ entry.icon | svgContents | safe }}
+                            {% endif %}
+                            {{ entry.title }}
+                        </a>
+                    </li>
+                {%- endfor %}
+            </ul>
+        </nav>
+    </div>
+</header>

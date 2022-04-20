@@ -1,0 +1,200 @@
+$colors: (
+  --red: hsl(348, 100%, 61%),
+  --blue: #6fa3fb,
+  --white: #ffffff,
+  --orange: #fa8142,
+  --green: #09c372,
+  --purple: hsl(265, 50%, 60%),
+  --yellow: hsl(48, 100%, 67%),
+  --pink: #ff4088,
+  --black: #212121,
+  --gray: #484848,
+);
+
+@mixin default-theme {
+  --gap: 0.5em;
+  --rounded-border: 3px;
+  --font-family: "Roboto", sans-serif;
+  --background: var(--gray6);
+  --text-color: var(--gray1);
+  --h-color: white;
+  --nav-shadow: 4px 0 10px -3px #010101;
+  --card-shadow: 0 4px 8px rgba(0, 0, 0, 0.38);
+  --toc-shadow: rgba(0, 0, 0, 0.7) 0px 10px 20px 0px;
+  --nav-bg: var(--gray5);
+  --tag-bg: var(--gray4);
+  --code-bg: #22262f; // #1d2327;
+  --card-bg: var(--gray5);
+  --overlay-bg: rgba(0, 0, 0, 0.9);
+  --h-border: 2px dashed var(--nav-bg);
+  --nav-border: 2px dashed var(--text-color);
+  transition: all 0.3s ease;
+}
+
+:root {
+  @each $name, $color in $colors {
+    #{$name}: #{$color};
+    #{$name}-dark: #{darken($color, 7%)};
+    #{$name}-light: #{lighten($color, 7%)};
+  }
+
+  --darkred: #7f0036;
+  --lightgray: #e0e0e0;
+  --gray: #c0c0c0;
+  --darkgray: #333;
+  --navy: #4f83cc;
+  --blue: #01579b;
+  --white: #fff;
+  --gray-dark: #363636;
+  --gray-light: #5a5a5a;
+  --gray0: #f8f8f8;
+  --gray1: #dbe1e8;
+  --gray2: #b2becd;
+  --gray3: #6c7983;
+  --gray4: #454e56;
+  --gray5: #2a2e35;
+  --gray6: #12181b;
+
+  --nav-width: 3em;
+  --font-body: system-ui, sans-serif;
+
+  --font-size: 1.2em;
+
+  --twitter: #1da1f2;
+  --youtube: #ff0a00;
+  --facebook: #3b5999;
+  --pinterest: #bd081c;
+  --whatsapp: #25d366;
+
+  --font-body: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Open Sans, Helvetica Neue, sans-serif;
+
+  @include default-theme;
+}
+
+.dark-theme {
+  --background: #1a1c20;
+  --bg-nav: #0a0b0c; // rgba(0, 0, 0, 0.25);
+  --text-color: var(--gray1);
+  --color-text-link: #58a6ff;
+
+  --nav-bg: var(--gray5);
+  --tag-bg: var(--gray4);
+  --h-border: 2px dashed var(--nav-bg);
+}
+
+.light-theme {
+  --background: var(--white);
+  --text-color: var(--gray6);
+  --color-text-link: #58a6ff;
+}
+
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  padding: 0;
+  margin: 0;
+  color: var(--text-color);
+  background-color: var(--background);
+  font-family: var(--font-body);
+  font-size: var(--font-size);
+}
+
+h1 {
+  margin: 0;
+  font-size: 2em;
+  padding-bottom: 0.5em;
+  span {
+    font-size: 0.5em;
+    display: block;
+    color: var(--gray2);
+  }
+}
+
+a {
+  text-decoration: none;
+  font-style: normal;
+  &:hover {
+    text-decoration: none;
+  }
+  &:visited {
+    text-decoration: none;
+  }
+}
+
+/* Direct Links / Markdown Headers */
+.direct-link {
+  font-family: sans-serif;
+  text-decoration: none;
+  font-style: normal;
+  margin-left: 0.1em;
+}
+a[href].direct-link,
+a[href].direct-link:visited {
+  color: transparent;
+}
+a[href].direct-link:focus,
+a[href].direct-link:focus:visited,
+:hover > a[href].direct-link,
+:hover > a[href].direct-link:visited {
+  color: #aaa;
+}
+
+/* Images */
+
+img.portrait {
+  display: flex;
+  margin: 1em auto;
+  width: 75%;
+  height: auto;
+}
+
+img.landscape {
+  width: 100%;
+  height: auto;
+}
+
+img.thumbnail {
+  width: 100%;
+  height: auto;
+}
+
+/* Iframes */
+.frame {
+  overflow: hidden;
+  padding-bottom: 60%;
+  position: relative;
+  height: 0;
+  max-width: 37.5em;
+
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+}
+
+.frame iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* Image with 'data' attribute is hidden */
+img[data-src] {
+  /* we set the opacity to 0 */
+  opacity: 0;
+}
+/* Image without 'data' attribute is (or becomes) visible */
+img.lazyloaded {
+  transition: opacity 0.2s linear 0.2s;
+  opacity: 1;
+  &:first-of-type {
+    
+    transition: opacity 0.1s linear 0.1s;
+  }
+}

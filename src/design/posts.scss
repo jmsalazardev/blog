@@ -1,0 +1,85 @@
+@import "./scss/base";
+@import "./scss/header";
+@import "./scss/content";
+@import "./scss/breadcrumb";
+@import "./scss/tag";
+@import "./scss/pagination";
+@import "./scss/footer";
+
+.grid {
+  display: grid;
+  grid-gap: 1em;
+}
+
+.grid-item {
+  display: flex;
+  flex-direction: column; 
+
+  a {
+    text-decoration: none;
+    color: var(--h-color);
+  }
+}
+
+
+.card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  border-top-left-radius: var(--rounded-border);
+  border-top-right-radius: var(--rounded-border);
+  background: var(--card-bg);
+  color: var(--text-color);
+
+  img {
+    border-top-left-radius: var(--rounded-border);
+    border-top-right-radius: var(--rounded-border);
+    width: 100%;
+    height: auto;
+    opacity: 0.9;
+  }
+
+  h2 {
+    padding: 0.5em 1em;
+    margin: 0;
+    font-size: smaller;
+    font-weight: 900;
+  }
+  
+  p {
+    font-size: smaller;
+    opacity: 0.8;
+    line-height: 1.6em;
+    font-weight: 400;
+    padding: 0 1em;
+    margin: 0;
+  }
+
+  .tags {
+    min-height: 1em;
+    margin-top: auto;
+  }
+}
+
+
+
+
+@media (max-width: 575px) {
+  .grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+@media (min-width: 576px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 1fr;
+  }
+}
+
+@media (min-width: 992px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 1fr;
+  }
+}
