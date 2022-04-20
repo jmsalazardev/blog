@@ -168,7 +168,7 @@ module.exports = (eleventyConfig) => {
 
   //#region PassthroughCopy
   eleventyConfig.addPassthroughCopy({
-    "assets/icons": ".",
+    "assets/icon": ".",
   });
   eleventyConfig.addPassthroughCopy({
     "assets/.well-known": ".well-known",
