@@ -48,7 +48,7 @@
     "type": "git",
     "url": "git+https://github.com/jmsalazardev/blog.git"
   },
-  "keywords": ["eleventy", "11ty"],
+  "keywords": ["eleventy", "11ty", "blog"],
   "bugs": {
     "url": "https://github.com/jmsalazardev/blog/issues"
   },
