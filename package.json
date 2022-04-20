@@ -1,9 +1,10 @@
 {
-  "name": "jmsalazardev",
-  "version": "1.0.0",
+  "name": "jmsalazardev-blog",
+  "version": "1.0.1",
   "main": "index.js",
   "scripts": {
     "clean": "npx rimraf public/",
+    "prebuild": "npm run clean",
     "build": "npx @11ty/eleventy",
     "bench": "DEBUG=Eleventy:Benchmark* npx @11ty/eleventy",
     "watch": "npx @11ty/eleventy --watch",
